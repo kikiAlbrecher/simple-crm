@@ -14,9 +14,9 @@ import { User } from '../models/user.class';
   styleUrl: './user.component.scss'
 })
 export class UserComponent {
-user: User = new User();
+  user: User = new User();
 
-constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) { }
 
   openDialog() {
     this.dialog.open(DialogAddUserComponent);
