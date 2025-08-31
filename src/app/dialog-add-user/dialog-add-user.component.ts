@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { MatDialogActions, MatDialogContent } from '@angular/material/dialog';
+import { MatDialogActions, MatDialogContent, MatDialogRef } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
@@ -26,26 +26,31 @@ import { ChangeDetectorRef } from '@angular/core';
 export class DialogAddUserComponent {
   user: User = new User();
   birthDate!: Date;
-  loading = false;
+  loading: boolean = false;
+
+  constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>) { }
 
   private firestore = inject(Firestore);
   private cdr = inject(ChangeDetectorRef);
 
   async saveUser() {
     this.user.birthDate = this.birthDate.getTime();
-    console.log('user:', this.user);
 
     try {
       this.loading = true;
       this.cdr.detectChanges();
       const usersCollection = collection(this.firestore, 'users');
       const result = await addDoc(usersCollection, { ...this.user });
-      console.log('Adding user finished', result);
     } catch (error) {
-      console.error('Error adding user:', error);
+      throw new Error('Error adding user: ' + error);
     } finally {
       this.loading = false;
       this.cdr.detectChanges();
+      this.dialogRef.close();
     }
+  }
+
+  cancelAction() {
+    this.dialogRef.close();
   }
 }

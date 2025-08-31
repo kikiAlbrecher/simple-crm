@@ -3,3 +3,50 @@ button {
     right: 56px;
     bottom: 56px;
 }
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.54);
+        cursor: pointer;
+
+        &:hover {
+            color: blue;
+        }
+
+        &:first-child {
+            cursor: unset;
+
+            &:hover {
+                color: unset;
+            }
+        }
+
+        &:last-child {
+            border-bottom: unset;
+        }
+
+        th {
+            color: rgba(0, 0, 0, 0.54);
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 24px;
+            text-align: left;
+        }
+
+        th,
+        td {
+            &:first-child {
+                padding-left: 16px;
+                padding-right: 8px
+            }
+
+            &:last-child {
+                padding-left: 8px;
+                padding-right: 16px;
+            }
+        }
+    }
+}

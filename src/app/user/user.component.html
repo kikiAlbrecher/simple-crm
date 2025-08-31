@@ -1,11 +1,21 @@
 <div>
-    <p>user works!</p>
-
-
+    <mat-card appearance="outlined">
+        <table class="user-table">
+            <tr>
+                <th>Name</th>
+                <th>E-Mail</th>
+                <th>City</th>
+            </tr>
+            <tr *ngFor="let user of allUsers" [routerLink]="'/user/' + user.id">
+                <td>{{ user.firstName }} {{ user.lastName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.city }}</td>
+        </table>
+    </mat-card>
 
     <button (click)="openDialog()" matFab aria-label="Example icon button with a delete icon" matButton="elevated"
-        matTooltip="add a user" matTooltipPosition="above" aria-label="tooltip add user when button is focused or hovered over">
+        matTooltip="add a user" matTooltipPosition="above"
+        aria-label="tooltip add user when button is focused or hovered over">
         <mat-icon>add</mat-icon>
     </button>
-    
 </div>

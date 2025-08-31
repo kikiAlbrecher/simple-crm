@@ -1,0 +1,28 @@
+<ng-container *ngIf="user$ | async as user">
+    <mat-card appearance="outlined" class="user-detail-header">
+        <img class="avatar" src="assets/icons/avatar-placeholder.svg" alt="avatar image">
+        <mat-card-header>
+            <mat-card-title>{{ user.firstName }} {{ user.lastName }}</mat-card-title>
+            <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+        </mat-card-header>
+
+
+        <!-- <mat-card-header>
+        <mat-card-title> Australian Shepherd</mat-card-title>
+        <mat-card-subtitle>Herding group</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+        <button matButton>Learn More</button>
+    </mat-card-actions> -->
+    </mat-card>
+
+    <mat-card appearance="outlined" class="mt-32">
+        <mat-card-header>
+            <mat-card-title>Address</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ user.street }}</p><br>
+            <p>{{ user.zipCode }} {{ user.city }}</p>
+        </mat-card-content>
+    </mat-card>
+</ng-container>

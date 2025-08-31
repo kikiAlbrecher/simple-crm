@@ -9,6 +9,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideAnimationsAsync(),
-    importProvidersFrom(provideFirebaseApp(() => initializeApp({ "projectId": "simple-crm-952ac", "appId": "1:734865068519:web:bf7681c7517741f85bed42", "storageBucket": "simple-crm-952ac.firebasestorage.app", "apiKey": "AIzaSyDmvvwgR2Gy-bmVuxN931D1AXOwETyVwSE", "authDomain": "simple-crm-952ac.firebaseapp.com", "messagingSenderId": "734865068519" }))), importProvidersFrom(provideFirestore(() => getFirestore()))
+    importProvidersFrom(provideFirebaseApp(() => initializeApp({ "projectId": "simple-crm-952ac", "appId": "1:734865068519:web:bf7681c7517741f85bed42", "storageBucket": "simple-crm-952ac.firebasestorage.app", "apiKey": "AIzaSyDmvvwgR2Gy-bmVuxN931D1AXOwETyVwSE", "authDomain": "simple-crm-952ac.firebaseapp.com", "messagingSenderId": "734865068519" }))),
+    importProvidersFrom(provideFirestore(() => getFirestore()))
   ]
 };

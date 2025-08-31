@@ -4,9 +4,10 @@
 
 .add-user-progress {
     position: absolute;
-    right: 0;
-    left: 0;
-    top: 0px;
+    right: 24px;
+    left: 24px;
+    top: 0;
+    width: calc(100% - 48px);
 }
 
 .title-add-user {
