@@ -21,7 +21,7 @@ import { ChangeDetectorRef } from '@angular/core';
   templateUrl: './dialog-add-user.component.html',
   styleUrl: './dialog-add-user.component.scss',
   providers: [provideNativeDateAdapter()],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DialogAddUserComponent {
   user: User = new User();

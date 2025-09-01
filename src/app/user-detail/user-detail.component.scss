@@ -20,3 +20,16 @@
         width: 100%;
     }
 }
+
+.submenu-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    border: unset;
+    border-radius: 50px;
+
+    &:hover {
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.1);
+    }
+}

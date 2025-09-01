@@ -1,22 +1,31 @@
 <ng-container *ngIf="user$ | async as user">
     <mat-card appearance="outlined" class="user-detail-header">
+        <button matIconButton [matMenuTriggerFor]="userMenu"
+            aria-label="icon button with a vertical three dot icon for opening submenu" class="submenu-button">
+            <mat-icon aria-hidden="false" aria-label="submenu icon">more_vert</mat-icon>
+        </button>
+
+        <mat-menu #userMenu="matMenu">
+            <button mat-menu-item (click)="editUserDetail()">Edit</button>
+        </mat-menu>
+
         <img class="avatar" src="assets/icons/avatar-placeholder.svg" alt="avatar image">
         <mat-card-header>
             <mat-card-title>{{ user.firstName }} {{ user.lastName }}</mat-card-title>
             <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
         </mat-card-header>
-
-
-        <!-- <mat-card-header>
-        <mat-card-title> Australian Shepherd</mat-card-title>
-        <mat-card-subtitle>Herding group</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-actions>
-        <button matButton>Learn More</button>
-    </mat-card-actions> -->
     </mat-card>
 
     <mat-card appearance="outlined" class="mt-32">
+        <button matIconButton [matMenuTriggerFor]="addressMenu"
+            aria-label="icon button with a vertical three dot icon for opening submenu" class="submenu-button">
+            <mat-icon aria-hidden="false" aria-label="submenu icon">more_vert</mat-icon>
+        </button>
+
+        <mat-menu #addressMenu="matMenu">
+            <button mat-menu-item (click)="editUserAddress()">Edit</button>
+        </mat-menu>
+
         <mat-card-header>
             <mat-card-title>Address</mat-card-title>
         </mat-card-header>

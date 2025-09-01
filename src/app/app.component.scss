@@ -62,6 +62,7 @@ ul {
         a {
             @include dFlex($jc: flex-start, $g: 4px);
             text-decoration: none;
+            width: 100%;
         }
     }
 }
